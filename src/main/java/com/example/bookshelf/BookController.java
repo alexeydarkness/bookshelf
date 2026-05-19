@@ -12,7 +12,6 @@ public class BookController {
 
     @Autowired
     private BookRepository bookRepository;
-    private String keyword;
 
     @GetMapping
     public List<Book> getAllBooks() {
@@ -55,7 +54,6 @@ public List<Book> searchByAuthor(@RequestParam String name) {
 
 @GetMapping("/search/title")
 public List<Book> searchByTttle(@RequestParam String keyword) {
-    this.keyword = keyword;
     return bookRepository.findByTitleContaining(keyword);
 }
 

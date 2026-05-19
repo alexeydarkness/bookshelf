@@ -12,25 +12,29 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @NotBlank(message = "Название не может быть пустым")
     @Size(min = 1, max = 255)
     private String title;
 
-
     @NotBlank(message = "Автор не может быть пустым")
     private String author;
 
+    private Integer year;
+
+    private String isbn;
+
+    private String genre;
+
+    private String readStatus;
+
     public Book() { }
 
-    // Конструктор с параметрами
     public Book(Long id, String title, String author) {
         this.id = id;
         this.title = title;
         this.author = author;
     }
 
-    // Геттеры
     public Long getId() {
         return id;
     }
